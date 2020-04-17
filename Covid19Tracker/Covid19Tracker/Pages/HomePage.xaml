@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:e="clr-namespace:Covid19Tracker.Controls" xmlns:util="clr-namespace:Covid19Tracker.Util"
+             mc:Ignorable="d" BackgroundColor="White"  Title="COVID-19" NavigationPage.HasNavigationBar="False" NavigationPage.HasBackButton="False"
+             xmlns:maps="clr-namespace:Syncfusion.SfMaps.XForms;assembly=Syncfusion.SfMaps.XForms" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="Covid19Tracker.Pages.HomePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <util:CurrencyConverter x:Key="currencyConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+                 IconImageSource="lrefresh.png"
+                 Order="Primary" Command="{Binding refreshCommand}"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid >
+            <Frame HasShadow="True" Margin="1,1,1,1" BackgroundColor="White" OutlineColor="LightGray" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" Margin="-4,-1,-4,-1">
+                    <StackLayout Orientation="Vertical" Margin="5,1,0,0">
+                        <Label FontSize="Medium" FontFamily="Sans-serif" Text="PANDEMIC COVID-19 CORONAVIRUS" TextColor="Accent" VerticalOptions="FillAndExpand" HorizontalOptions="Center"></Label>
+                    </StackLayout>
+                    <forms:AnimationView 
+                    Animation="globe.json" HorizontalOptions="Center" VerticalOptions="Center"
+                    Loop="True"  HeightRequest="150" 
+                    WidthRequest="200"
+                    AutoPlay="True"/>
+                    <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Frame  HasShadow="True" BackgroundColor="White" CornerRadius="5" Padding="0" OutlineColor="LightGray">
+                            <StackLayout WidthRequest="120" Orientation="Vertical" Padding="5" BackgroundColor="#f6f6f7"  Grid.Row="0"  VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                                <Label  FontFamily="Sans-serif" FontSize="12" Text="TOTAL CASES" ></Label>
+                                <Label x:Name="TotalCasesColor" FontFamily="Sans-serif" TextColor="Gray"  HorizontalOptions="Start"  VerticalOptions="CenterAndExpand" FontSize="12" Text="{Binding totalCases}"></Label>
+                            </StackLayout>
+                        </Frame>
+                        <Frame  HasShadow="True" BackgroundColor="White" CornerRadius="5" Padding="0" OutlineColor="LightGray">
+                            <StackLayout Orientation="Vertical"  Padding="5" BackgroundColor="#eff7ff"  WidthRequest="80"   Grid.Row="1"  VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                                <Label  FontFamily="Sans-serif" FontSize="12" Text="ACTIVE" TextColor="#037dff"></Label>
+                                <Label  x:Name="activeCasesColor"  FontFamily="Sans-serif" TextColor="#037dff" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="12" Text="{Binding Activecases}"></Label>
+                            </StackLayout>
+                        </Frame>
+                        <Frame  HasShadow="True" BackgroundColor="White" CornerRadius="5" Padding="0" OutlineColor="LightGray">
+                            <StackLayout WidthRequest="120"  Orientation="Vertical"  Padding="5"  BackgroundColor="#e4f4e8"  Grid.Row="2"  VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                                <Label  FontFamily="Sans-serif" FontSize="12" Text="RECOVERED"  TextColor="#38ad53" ></Label>
+                                <Label x:Name="RecoveredCasesColor"  FontFamily="Sans-serif" TextColor="#38ad53" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="12" Text="{Binding Recovered}"></Label>
+                            </StackLayout>
+                        </Frame>
+          
+                        <Frame  HasShadow="True" BackgroundColor="White" CornerRadius="5" Padding="0" OutlineColor="LightGray">
+                            <StackLayout WidthRequest="100"  Orientation="Vertical" Padding="5" BackgroundColor="#ffe0e6"   Grid.Row="3"  VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                                <Label  FontFamily="Sans-serif" FontSize="12" Text="DECEASED" TextColor="#e23129" ></Label>
+                                <Label x:Name="DeceasedCasesColor" FontFamily="Sans-serif" TextColor="#e23129"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="12" Text="{Binding deaths}"></Label>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                <StackLayout Orientation="Vertical" Margin="10,5,0,0" >
+                    <Label  Margin="5,5,0,0" HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Last update :" FontSize="Small" TextColor="Gray" />
+                                <Span Text=" "/>
+                                <Span Text="{Binding LatestUpdate}" FontSize="Small" TextColor="#7B7878"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+                    <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Frame CornerRadius="5" Padding="0">
+                            <StackLayout Spacing="10" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+                                <Label x:Name="gotoCountry"  Text="View by country" FontSize="Large"  BackgroundColor="#ffe0e6" HorizontalTextAlignment="Center" >
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding viewbyCountry}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+             
+                    <StackLayout Orientation="Vertical" Margin="5,5,0,0">
+                        <Label FontSize="Medium" FontFamily="Sans-serif" Text="INDIA COVID-19 CORONAVIRUS" TextColor="Accent" VerticalOptions="FillAndExpand" HorizontalOptions="Center"></Label>
+                        <forms:AnimationView 
+                    Animation="Indianflag.json" HorizontalOptions="Center" VerticalOptions="Center"
+                    Loop="True"  HeightRequest="100" 
+                    WidthRequest="100"
+                    AutoPlay="True"/>
+                    </StackLayout>
+                    <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Frame  HasShadow="True" BackgroundColor="White" CornerRadius="5" Padding="0" OutlineColor="LightGray">
+                            <StackLayout WidthRequest="100" HeightRequest="60" Orientation="Vertical" Padding="5" BackgroundColor="#f6f6f7"  Grid.Row="0"  VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                                <Label  FontFamily="Sans-serif" FontSize="12" Text="CONFIRMED" ></Label>
+                                <Label  x:Name="confirmedLabel" FontFamily="Sans-serif" FontSize="12" Text="{Binding IndPulsConfirmed}" TextColor="#FC7B7B"></Label>
+                                <Label  FontFamily="Sans-serif" TextColor="Gray"  HorizontalOptions="Start"  VerticalOptions="CenterAndExpand" FontSize="12" Text="{Binding IndConfirmerd}"></Label>
+                            </StackLayout>
+                        </Frame>
+                        <Frame  HasShadow="True" BackgroundColor="White" CornerRadius="5" Padding="0" OutlineColor="LightGray">
+                            <StackLayout Orientation="Vertical"  Padding="5" BackgroundColor="#eff7ff"  WidthRequest="80"   Grid.Row="2"  VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                                <Label  FontFamily="Sans-serif" FontSize="12" Text="ACTIVE" TextColor="#037dff"></Label>
+                                <Label  FontFamily="Sans-serif" TextColor="#037dff" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="12" Text="{Binding Indactive}"></Label>
+                            </StackLayout>
+                        </Frame>
+                        <Frame  HasShadow="True" BackgroundColor="White" CornerRadius="5" Padding="0" OutlineColor="LightGray">
+                            <StackLayout Orientation="Vertical"  Padding="5"  BackgroundColor="#e4f4e8"  WidthRequest="100"  Grid.Row="2"  VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                                <Label  FontFamily="Sans-serif" FontSize="12" Text="RECOVERED"  TextColor="#38ad53" ></Label>
+                                <Label  x:Name="recoveredLabel" FontFamily="Sans-serif" FontSize="12" Text="{Binding IndPulsrecoveded}"  TextColor="#FC7B7B"></Label>
+                                <Label  FontFamily="Sans-serif" TextColor="#38ad53" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="12" Text="{Binding Indrecovered}"></Label>
+                            </StackLayout>
+                        </Frame>
+                        <Frame  HasShadow="True" BackgroundColor="White" CornerRadius="5" Padding="0" OutlineColor="LightGray">
+                            <StackLayout Orientation="Vertical" Padding="5" BackgroundColor="#ffe0e6"  WidthRequest="80"   Grid.Row="1"  VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                                <Label  FontFamily="Sans-serif" FontSize="12" Text="DECEASED" TextColor="#e23129" ></Label>
+                                <Label  x:Name="deasedLabel" FontFamily="Sans-serif" FontSize="12" Text="{Binding IndPulsDeceased}" TextColor="#FC7B7B"></Label>
+                                <Label  FontFamily="Sans-serif" TextColor="#e23129"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="12" Text="{Binding Inddeaths}"></Label>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Vertical" Margin="10,5,0,0" >
+                    <Label  Margin="5,5,0,0" HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Last update :" FontSize="Small" FontFamily="Sans-serif" TextColor="Gray" />
+                                <Span Text=" "/>
+                                <Span Text="{Binding Indlastupdatedtime}" FontSize="Small" TextColor="#7B7878"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+                    <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Frame CornerRadius="5" Padding="0">
+                            <StackLayout Spacing="10" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+                                <Label x:Name="gotoState"  Text="View by state" FontSize="Large"  BackgroundColor="#ffe0e6" HorizontalTextAlignment="Center" >
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding viewbyState}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+            </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="White" Opacity="0.8" Padding="10" IsVisible="{Binding IsBusy}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                    <ActivityIndicator HeightRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Color="Red " IsRunning="{Binding IsBusy}"/>
+                    <Label Text="Loading..." HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Red" Margin="0,5" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

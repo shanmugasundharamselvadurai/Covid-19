@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Covid19Tracker.Controls" xmlns:maps="clr-namespace:Syncfusion.SfMaps.XForms;assembly=Syncfusion.SfMaps.XForms"
+             BackgroundColor="White" NavigationPage.HasNavigationBar="false"
+             mc:Ignorable="d"
+             x:Class="Covid19Tracker.Pages.CountryDetailsPage">
+
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Frame Padding="0" Margin="4,5,4,-3" OutlineColor="LightGray" HasShadow="True" HorizontalOptions="FillAndExpand"  VerticalOptions="Center">
+                    <SearchBar Text="{Binding SearchText, Mode=TwoWay}" Placeholder="Search by country" SearchCommand="{Binding SearchCommand}">
+                        <!--<SearchBar.Behaviors>
+                        <local:TextChangedBehavior/>
+                    </SearchBar.Behaviors>-->
+                    </SearchBar>
+                </Frame>
+                <StackLayout>
+                    <ListView ItemsSource="{Binding NiCovid19Model}" SelectedItem="{Binding SelectedItem,Mode=TwoWay}" VerticalScrollBarVisibility="Never"  SeparatorVisibility="None"
+                              BackgroundColor="White" Grid.Row="1" HorizontalOptions="FillAndExpand" HasUnevenRows="True" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame HasShadow="True" Margin="5,5,5,2" BackgroundColor="White" OutlineColor="LightGray" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                        <StackLayout Padding="5" Spacing="10"  BackgroundColor="White"  Margin="-15,-15,-15,-15" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                                 <StackLayout BackgroundColor="#f6f6f7" >
+                                                <Label Text="{Binding country}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="Large"  Grid.Row="0" TextColor="Black"  />
+                                                </StackLayout>
+                                            <Image Source="{Binding countryInfo.flag}" />
+                                            <Frame CornerRadius="5" Padding="0" BackgroundColor="#f6f6f7" >
+                                                <StackLayout Orientation="Horizontal" Padding="5" >
+                                                    <Label Text="Total Cases" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                                    <Label Text="{Binding cases}" FontSize="Medium"  TextColor="Gray"/>
+                                                </StackLayout>
+                                            </Frame>
+                                            <Frame CornerRadius="5" Padding="0">
+                                                <StackLayout Orientation="Horizontal" BackgroundColor="#FFEEAA" Padding="5">
+                                                    <Label Text="New Cases" FontSize="Medium"   HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                                    <Label Text="{Binding todayCases}" x:Name="newCases" TextColor="{Binding newCasesTes}"  FontSize="Medium" />
+                                                </StackLayout>
+                                            </Frame>
+                                            <Frame CornerRadius="5" Padding="0">
+                                                <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="#ffe0e6" >
+                                                    <Label Text="Total Deaths" TextColor="#e23129"  FontSize="Medium"    HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                                    <Label Text="{Binding deaths}" TextColor="#e23129" FontSize="Medium"  />
+                                                </StackLayout>
+                                            </Frame>
+
+                                            <Frame CornerRadius="5" Padding="0">
+                                                <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="#ffe0e6" >
+                                                    <Label Text="New Deaths" TextColor="#e23129"  FontSize="Medium"    HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                                    <Label Text="{Binding todayDeaths}" TextColor="#e23129" FontSize="Medium"  />
+                                                </StackLayout>
+                                            </Frame>
+                                            
+                                            <Frame CornerRadius="5" Padding="0" >
+                                                <StackLayout Orientation="Horizontal"  BackgroundColor="#e4f4e8" Padding="5">
+                                                    <Label Text="Total Recovered" TextColor="Black" FontSize="Medium"    HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                                    <Label Text="{Binding recovered}" TextColor="#696969" FontSize="Medium"  />
+                                                </StackLayout>
+                                            </Frame>
+                                            <Frame CornerRadius="5" Padding="0">
+                                                <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="#eff7ff">
+                                                    <Label Text="Active cases" TextColor="#037dff"  FontSize="Medium"    HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                                    <Label Text="{Binding active}" TextColor="#037dff"  FontSize="Medium"  />
+                                                </StackLayout>
+                                            </Frame>
+
+                                            <Frame CornerRadius="5" Padding="0">
+                                                <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="#ffe0e6" >
+                                                    <Label Text="Serious, Critical" TextColor="#e23129"  FontSize="Medium"    HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                                    <Label Text="{Binding critical}" TextColor="#e23129" FontSize="Medium"  />
+                                                </StackLayout>
+                                            </Frame>
+                                      
+                                            <Frame CornerRadius="5" Padding="0">
+                                                <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="#f6f6f7" >
+                                                    <Label Text="Tot Cases/1M pop" TextColor="Black" FontSize="Medium"    HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                                    <Label Text="{Binding casesPerOneMillion}" TextColor="Gray" FontSize="Medium"  />
+                                                </StackLayout>
+                                            </Frame>
+                                            <Frame CornerRadius="5" Padding="0">
+                                                <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="#f6f6f7" >
+                                                    <Label Text="Deaths/1M pop" TextColor="Black" FontSize="Medium"    HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                                    <Label Text="{Binding deathsPerOneMillion}" TextColor="Gray" FontSize="Medium"  />
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                    </Frame>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <!--<StackLayout BackgroundColor="#f54542" HeightRequest="50">
+                        <Label Text="Total" TextColor="White"  FontSize="20" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer  Command="{Binding totalCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>-->
+                </StackLayout>
+            </StackLayout>
+
+            <Frame BackgroundColor="White" Opacity="0.8" Padding="10" IsVisible="{Binding IsBusy}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                    <ActivityIndicator HeightRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Color="Red" IsRunning="{Binding IsBusy}"/>
+                    <Label Text="Loading..." HorizontalOptions="Center" HorizontalTextAlignment="Center"  TextColor="Red" Margin="0,5" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+       
+    </ContentPage.Content>
+</ContentPage>

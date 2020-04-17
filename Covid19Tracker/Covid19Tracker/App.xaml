@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Covid19Tracker.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#125aae</Color>
+            <OnPlatform x:Key="TextSizeNormal" x:TypeArguments="x:Double" iOS="12" Android="14" />
+            <OnPlatform x:Key="TextSizeBig" x:TypeArguments="x:Double" iOS="18" Android="19" />
+            <Style x:Key="LabelNormalStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource TextSizeNormal}" />
+            </Style>
+            <Style x:Key="LabelBigStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource TextSizeBig}" />
+            </Style>
+            <Color x:Key="BackgroundBlue">#125aae</Color>
+            <Color x:Key="BackgroundDefault">White</Color>
+            <Color x:Key="ButtonBlue">#2074b9</Color>
+            <Color x:Key="ButtonGray">#F1F2F2</Color>
+            <Color x:Key="ButtonFont">#2175B9</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

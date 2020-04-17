@@ -1,0 +1,8 @@
+values/Strings.xml;values/strings.xml
+Layout/layout_maps.xml;layout/layout_maps.xml
+values/dimens.xml;values/dimens.xml
+values-w820dp/dimens.xml;values-w820dp/dimens.xml
+menu/menu_sf_maps.xml;menu/menu_sf_maps.xml
+values/attrs.xml;values/attrs.xml
+Anim/Scale_in.xml;anim/scale_in.xml
+Anim/Scale_out.xml;anim/scale_out.xml

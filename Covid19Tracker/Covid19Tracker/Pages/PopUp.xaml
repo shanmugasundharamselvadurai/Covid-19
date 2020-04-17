@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage  xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pagemodels="clr-namespace:Covid19Tracker.PageModels"
+                  mc:Ignorable="d"
+             x:Class="Covid19Tracker.Pages.PopUp">
+
+    <popup:PopupPage.BindingContext>
+        <pagemodels:CountryDetailsPageModel />
+    </popup:PopupPage.BindingContext>
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="0" Margin="0">
+        <Frame WidthRequest="270" HeightRequest="300" Padding="15" BorderColor="Red">
+            <StackLayout>
+                <Image  Source="coronavirus.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"  HeightRequest="100" WidthRequest="100"></Image>
+                <StackLayout Orientation="Vertical" Margin="5,0,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                    <Label  FontAttributes="Bold"  Text="Total Cases"></Label>
+                    <Label  FontAttributes="Bold" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center" x:Name="totalcase"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Margin="5,5,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="Center"  >
+                    <Label  FontAttributes="Bold" TextColor="Black"  Text=" Total Deaths"></Label>
+                    <Label  FontAttributes="Bold" TextColor="#696969" HorizontalOptions="Center" VerticalOptions="Center" x:Name="totalDeaths" ></Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Margin="5,5,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="Center"  >
+                    <Label  FontAttributes="Bold"  Text="Total Recovered"></Label>
+                    <Label  FontAttributes="Bold" TextColor="YellowGreen" HorizontalOptions="Center" VerticalOptions="Center" x:Name="totalRecovered" ></Label>
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</popup:PopupPage>
