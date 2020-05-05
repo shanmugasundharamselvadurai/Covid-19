@@ -16,7 +16,7 @@ namespace Covid19Tracker.PageModels
         }
         private async void GoToHomepageAsync()
         {
-            await PushAsync<IndiaDistrictDetailPageModel>();
+            await PushAsync<HomePageModel>();
         }
 
    }

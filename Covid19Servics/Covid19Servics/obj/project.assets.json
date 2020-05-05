@@ -631,11 +631,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sselvadu\\source\\repos\\Covid19Servics\\Covid19Servics\\Covid19Servics.csproj",
+      "projectUniqueName": "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Servics\\Covid19Servics\\Covid19Servics.csproj",
       "projectName": "Covid19Servics",
-      "projectPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19Servics\\Covid19Servics\\Covid19Servics.csproj",
+      "projectPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Servics\\Covid19Servics\\Covid19Servics.csproj",
       "packagesPath": "C:\\Users\\sselvadu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19Servics\\Covid19Servics\\obj\\",
+      "outputPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Servics\\Covid19Servics\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -9,3 +9,14 @@ C:\Users\sselvadu\source\repos\Covid19Servics\Covid19Servics\obj\Debug\netstanda
 C:\Users\sselvadu\source\repos\Covid19Servics\Covid19Servics\obj\Debug\netstandard2.0\Covid19Servics.dll
 C:\Users\sselvadu\source\repos\Covid19Servics\Covid19Servics\obj\Debug\netstandard2.0\ref\Covid19Servics.dll
 C:\Users\sselvadu\source\repos\Covid19Servics\Covid19Servics\obj\Debug\netstandard2.0\Covid19Servics.pdb
+C:\Users\sselvadu\source\repos\Covid19\Covid19Servics\Covid19Servics\bin\Debug\netstandard2.0\Covid19Servics.deps.json
+C:\Users\sselvadu\source\repos\Covid19\Covid19Servics\Covid19Servics\bin\Debug\netstandard2.0\Covid19Servics.dll
+C:\Users\sselvadu\source\repos\Covid19\Covid19Servics\Covid19Servics\bin\Debug\netstandard2.0\ref\Covid19Servics.dll
+C:\Users\sselvadu\source\repos\Covid19\Covid19Servics\Covid19Servics\bin\Debug\netstandard2.0\Covid19Servics.pdb
+C:\Users\sselvadu\source\repos\Covid19\Covid19Servics\Covid19Servics\obj\Debug\netstandard2.0\Covid19Servics.csproj.CoreCompileInputs.cache
+C:\Users\sselvadu\source\repos\Covid19\Covid19Servics\Covid19Servics\obj\Debug\netstandard2.0\Covid19Servics.AssemblyInfoInputs.cache
+C:\Users\sselvadu\source\repos\Covid19\Covid19Servics\Covid19Servics\obj\Debug\netstandard2.0\Covid19Servics.AssemblyInfo.cs
+C:\Users\sselvadu\source\repos\Covid19\Covid19Servics\Covid19Servics\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\sselvadu\source\repos\Covid19\Covid19Servics\Covid19Servics\obj\Debug\netstandard2.0\Covid19Servics.dll
+C:\Users\sselvadu\source\repos\Covid19\Covid19Servics\Covid19Servics\obj\Debug\netstandard2.0\ref\Covid19Servics.dll
+C:\Users\sselvadu\source\repos\Covid19\Covid19Servics\Covid19Servics\obj\Debug\netstandard2.0\Covid19Servics.pdb

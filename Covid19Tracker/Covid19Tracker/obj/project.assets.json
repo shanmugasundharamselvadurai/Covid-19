@@ -1169,11 +1169,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sselvadu\\source\\repos\\Covid19Tracker\\Covid19Tracker\\Covid19Tracker.csproj",
+      "projectUniqueName": "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Tracker\\Covid19Tracker\\Covid19Tracker.csproj",
       "projectName": "Covid19Tracker",
-      "projectPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19Tracker\\Covid19Tracker\\Covid19Tracker.csproj",
+      "projectPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Tracker\\Covid19Tracker\\Covid19Tracker.csproj",
       "packagesPath": "C:\\Users\\sselvadu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19Tracker\\Covid19Tracker\\obj\\",
+      "outputPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Tracker\\Covid19Tracker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -1195,8 +1195,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\sselvadu\\source\\repos\\Covid19Servics\\Covid19Servics\\Covid19Servics.csproj": {
-              "projectPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19Servics\\Covid19Servics\\Covid19Servics.csproj"
+            "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Servics\\Covid19Servics\\Covid19Servics.csproj": {
+              "projectPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Servics\\Covid19Servics\\Covid19Servics.csproj"
             }
           }
         }

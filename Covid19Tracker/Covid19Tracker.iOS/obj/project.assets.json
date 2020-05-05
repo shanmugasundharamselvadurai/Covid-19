@@ -1349,6 +1349,7 @@
         "lib/MonoTouch/Rg.Plugins.Popup.dll",
         "lib/MonoTouch/Rg.Plugins.Popup.pdb",
         "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll.mdb",
         "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.pdb",
         "lib/Xamarin.IOS/Rg.Plugins.Popup.dll",
         "lib/Xamarin.IOS/Rg.Plugins.Popup.pdb",
@@ -1895,11 +1896,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sselvadu\\source\\repos\\Covid19Tracker\\Covid19Tracker.iOS\\Covid19Tracker.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Tracker\\Covid19Tracker.iOS\\Covid19Tracker.iOS.csproj",
       "projectName": "Covid19Tracker.iOS",
-      "projectPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19Tracker\\Covid19Tracker.iOS\\Covid19Tracker.iOS.csproj",
+      "projectPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Tracker\\Covid19Tracker.iOS\\Covid19Tracker.iOS.csproj",
       "packagesPath": "C:\\Users\\sselvadu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19Tracker\\Covid19Tracker.iOS\\obj\\",
+      "outputPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Tracker\\Covid19Tracker.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1921,8 +1922,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\sselvadu\\source\\repos\\Covid19Tracker\\Covid19Tracker\\Covid19Tracker.csproj": {
-              "projectPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19Tracker\\Covid19Tracker\\Covid19Tracker.csproj"
+            "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Tracker\\Covid19Tracker\\Covid19Tracker.csproj": {
+              "projectPath": "C:\\Users\\sselvadu\\source\\repos\\Covid19\\Covid19Tracker\\Covid19Tracker\\Covid19Tracker.csproj"
             }
           }
         }

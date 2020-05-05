@@ -20,9 +20,7 @@ namespace Covid19Tracker.PageModels
         public IndiaDistrictDetailPageModel()
         {
             _commonServices = new CommonService();
-
             districtList = new ObservableCollection<Covid19IdistrictModel>();
-
             Task.Run(GetCountryListcases);
         }
 

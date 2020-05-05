@@ -33,11 +33,10 @@ namespace Covid19Tracker.PageModels
         public Command viewbyCountry => new Command(async () => viewbyCountryAsync());
         public Command viewbyState => new Command(async () => viewbyStateAsync());
 
-
         public HomePageModel()
         {
             _commonServices = new CommonService();
-             Task.Run(getTotalCase);
+            Task.Run(getTotalCase);
             Task.Run(getIndiaData);
             
             //list data
